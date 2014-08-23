@@ -18,8 +18,13 @@ func main() {
         log.Fatal("Connection error", err)
     }
     encoder := gob.NewEncoder(conn)
-    p := &P{1, 2}
+    p := 3
     encoder.Encode(p)
+
+    dec := gob.NewDecoder(conn)
+    dec.Decode(&p)
+    fmt.Printf("Received : %+v", p);
+    
     conn.Close()
     fmt.Println("done");
 }

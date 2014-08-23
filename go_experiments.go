@@ -12,8 +12,8 @@ type P struct {
 
 func handleConnection(conn net.Conn) {
 	dec := gob.NewDecoder(conn)
-	p := &int64
-	dec.Decode(p)
+	p := 0
+	dec.Decode(&p)
 
 	encoder := gob.NewEncoder(conn)
     encoder.Encode(p * 2)
