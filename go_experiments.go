@@ -1,4 +1,4 @@
-package go_experiments
+package main
 
 import (
 	"fmt"
