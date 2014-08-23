@@ -1,4 +1,4 @@
-package main
+package github.com/bonus2113/go_experiments
 
 import (
 	"fmt"
