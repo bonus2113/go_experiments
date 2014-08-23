@@ -18,7 +18,7 @@ func handleConnection(conn net.Conn) {
 	encoder := gob.NewEncoder(conn)
     encoder.Encode(p * 2)
 
-	fmt.Printf("Received : %+v", p);
+	fmt.Printf("Received : %+v\n", p);
 }
 
 func main() {

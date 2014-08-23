@@ -13,7 +13,7 @@ type P struct {
 
 func main() {
     fmt.Println("start client");
-    conn, err := net.Dial("tcp", "localhost:8080")
+    conn, err := net.Dial("tcp", "54.200.222.128:8080")
     if err != nil {
         log.Fatal("Connection error", err)
     }
@@ -23,8 +23,8 @@ func main() {
 
     dec := gob.NewDecoder(conn)
     dec.Decode(&p)
-    fmt.Printf("Received : %+v", p);
-    
+    fmt.Printf("Received : %+v\n", p);
+
     conn.Close()
     fmt.Println("done");
 }
